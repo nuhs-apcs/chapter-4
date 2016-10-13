@@ -112,6 +112,45 @@ public class TestLab {
 		
 	}
 	
+	@Test
+	public void testBandBooster() {
+		String boosterName1 = "Sally";
+		String boosterName2 = "John";
+		
+		BandBooster booster1 = new BandBooster(boosterName1);
+		BandBooster booster2 = new BandBooster(boosterName2);
+		
+		assertEquals("The BandBooster name should reflect the name passed in the constructor", boosterName1, booster1.getName());
+		assertEquals("The BandBooster name should reflect the name passed in the constructor", boosterName2, booster2.getName());
+		
+		booster1.updateSales(17);
+		booster1.updateSales(6);
+		assertEquals("The string representation should reflect the booster name and number of boxes sold", boosterName1 + ":\t23 boxes", booster1.toString());
+		
+		booster2.updateSales(19);
+		booster2.updateSales(-10);
+		assertEquals("Negative sale amounts should be ignored", boosterName2 + ":\t19 boxes", booster2.toString());
+	}
+	
+	@Test
+	public void testName() {
+		Name me = new Name("Ryan", "Campbell", "Brott");
+		
+		assertEquals("First name getter should work", "Ryan", me.getFirst());
+		assertEquals("Middle name getter should work", "Campbell", me.getMiddle());
+		assertEquals("Last name getter should work", "Brott", me.getLast());
+		
+		assertEquals("firstMiddleLast() should return the full name in the proper format", "Ryan Campbell Brott", me.firstMiddleLast());
+		assertEquals("lastFirstMiddle() should be in the proper format", "Brott, Ryan Campbell", me.lastFirstMiddle());
+		
+		Name alterEgo = new Name("RYaN", "CAMpbeLl", "bRoTt");
+		assertEquals("Names should be considered equivalent if each part matches case insensitively", me, alterEgo);
+		
+		assertEquals("The proper initials should be computed", "RCB", alterEgo.initials());
+		
+		assertEquals("The length should be properly computed", 13, me.length());
+	}
+	
 	@After
 	public void destroyStreams() {
 		System.setOut(null);
