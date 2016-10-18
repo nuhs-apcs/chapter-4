@@ -151,6 +151,33 @@ public class TestLab {
 		assertEquals("The length should be properly computed", 13, me.length());
 	}
 	
+	@Test
+	public void testRectangle() {
+		final double TOLERANCE = 0.00001;
+		
+		double width = -3.0, height = 4.0, diagonal = 5.0;
+		double width2 = 32.0, height2 = -32.000004;
+		Rectangle rect = new Rectangle(width, height);
+		Rectangle rect2 = new Rectangle(width2, height2);
+		
+		assertEquals("Width getter", Math.abs(width), rect.getWidth(), TOLERANCE);
+		assertEquals("Height getter", Math.abs(height), rect.getHeight(), TOLERANCE);
+		
+		assertEquals("Area", Math.abs(width * height), rect.area(), TOLERANCE);
+		
+		assertEquals("Perimeter", 2.0 * (Math.abs(width) + Math.abs(height)), rect.perimeter(), TOLERANCE);
+		
+		assertTrue("Equals (same instance)", rect.equals(rect));
+		assertTrue("Equals (new instance)", rect.equals(new Rectangle(width, height)));
+		assertTrue("Equals (different dimensions)", rect.equals(new Rectangle(height, width)));
+		assertFalse("Equals (not equal)", rect.equals(rect2));
+		
+		assertEquals("Diagonal length", diagonal, rect.diagonal(), TOLERANCE);
+		
+		assertFalse("Square (not square)", rect.isSquare());
+		assertTrue("Square (actually square)", rect2.isSquare());
+	}
+	
 	@After
 	public void destroyStreams() {
 		System.setOut(null);
