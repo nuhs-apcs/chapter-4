@@ -10,7 +10,8 @@ Exercises 1-5 are adapted from similar lab assignments found at https://github.c
 4. Creating a Band Booster Class
 5. Representing Names
 6. Rectangles
-7. Fractals
+7. Hangman
+8. Fractals
 
 ## Using the Coin Class
 
@@ -78,9 +79,9 @@ In this exercise, you will write a class that models a band booster and their ca
 
 5.  The method `toString()` should return a string containing the name of the band booster and the number of boxes he/she has sold per this format:
 
-    ```
-    Joe:	16 boxes
-    ```
+       ```
+       Joe:	16 boxes
+       ```
 
 ## Representing Names
 
@@ -109,6 +110,58 @@ Implement a `Rectangle` class with the following methods:
 - `public double equals(Rectangle other)`—two rectangles are equal if their dimensions are equals (within a tolerance of 0.00001 for the `double` comparisons; also note that the rectangle with dimensions 400x13 is the same as one with dimensions 13x400
 - `public double diagonal()`—returns the length of the diagonal of the rectangle
 - `public boolean isSquare()`—returns `true` if the rectangle is square (again, within a tolerance of 0.00001)
+
+## Hangman
+
+At some point in your life, I'm sure you've played the game Hangman. To refresh your memory, the objective of Hangman is to guess an unknown word by choosing certain letters that you believe may be in the word. In our version of the game, the computer generates a random word while the human user is tasked with guessing the words. Here is the general procedure:
+
+1. The computer chooses a random word.
+2. The computer tells the user how many letters the word has.
+3. The computer prints out the valid letters (lowercase a-z minus the previously-guessed letters) and prompts the user to guess a letter.
+   1. If the word contains the letter, the computer prints out a congratulatory message containing the letters of the word guessed so far with underscores in the positions of the missing letters.
+   2. Otherwise, a different message is printed and the number of guesses is decremented by 1.
+4. Repeat the previous step until either the word is guessed or the number of guesses is 0.
+
+
+
+Example run:
+
+```
+Welcome to the game, Hangman!
+I'm thinking of a word that is 5 letters long
+-------------
+You have 8 guesses left
+Available letters: abcdefghijklmnopqrstuvwxyz
+Please guess a letter: a
+Good guess: __a__
+-------------
+You have 8 guesses left
+Available letters: bcdefghijklmnopqrstuvwxyz
+Please guess a letter: e
+Good guess: __a_e
+-------------
+You have 8 guesses left
+Available letters: bcdfghijklmnopqrstuvwxyz
+Please guess a letter: p
+Good guess: __ape
+-------------
+You have 8 guesses left
+Available letters: bcdfghijklmnoqrstuvwxyz
+Please guess a letter: t
+Oops! That letter is not in my word
+-------------
+You have 7 guesses left
+Available letters: bcdfghijklmnoqrsuvwxyz
+Please guess a letter: s
+Good guess: s_ape
+-------------
+You have 7 guesses left
+Available letters: bcdfghijklmnoqruvwxyz
+Please guess a letter: h
+You guessed the word: shape
+```
+
+All of the code for this exercise is in `Hangman.java`. Your task it two-fold: First, fill in the code in `playHangman()` according to the comments inside. Second, there are a few logical errors (bugs) in the program that need to be debugged. Once you fix them all, the program should run properly. You may find it helpful to walk through the code using Eclipse's debugger for the second portion of this exercise. 
 
 ## Fractals
 
