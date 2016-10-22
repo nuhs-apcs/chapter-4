@@ -4,16 +4,29 @@ Exercises 1-5 are adapted from similar lab assignments found at https://github.c
 
 ## Table of Contents
 
-1. Using the Coin Class
-2. Creating a Bank Account Class
-3. Tracking Grades
-4. Creating a Band Booster Class
-5. Representing Names
+0. Running Unit Tests
+1. Coin Flips
+2. Bank Account
+3. Grades
+4. Band Boosters
+5. Names
 6. Rectangles
 7. Hangman
 8. Fractals
 
-## Using the Coin Class
+## Running Unit Tests
+
+In this chapter, exercises 1-6 have unit tests that will automatically test your code for you. All of the unit tests for this set of labs are contained in `TestLab.java`. To run the tests, open and run this file just like any other program with a `main()` method. Once you do so, a window should open showing all of the tests:
+
+<img src="junit_pane.png" style="width: 50%;"/>
+
+When you first run the tests, you'll get a window similar to that above. Notice that there are x's next to each lab; this means that the corresponding unit test failed. Down at the bottom in the Failure Trace window, you can see specifics about why the selected test (in this case, testAccount) has failed. Now, after completing the first lab and running the tests again, we get a slightly different picture:
+
+<img src="junit_pane_success.png" alt="JUnit Pane Success" style="width: 50%" />
+
+Now, as indicated by the green check, the testFlips test has passed. This means that the **Coin Flips** lab has been completed.
+
+## Coin Flips
 
 In the lab project, there is a `Coin` class that implements the basic behavior of a coin. Your task is to write a program in the `CoinTest` class that finds the length of the longest run of consecutive heads in 100 flips of a coin. You will need to use a `Coin` object to emulate the coin flips. A skeleton of the program is provided in the `CoinTest.java` file that explains the details of your program implementation. 
 
@@ -39,7 +52,7 @@ Heads
 The maximum run of HEADS was 6
 ```
 
-## Creating a Bank Account Class
+## Bank Account
 
 The file `Account.java` contains a partial definition for a class representing a bank account. Complete the `Account` class as described below.
 
@@ -47,7 +60,7 @@ The file `Account.java` contains a partial definition for a class representing a
 2. Fill in the code for `chargeFee()` so that it deducts a service fee from the account.
 3. Fill in the code for `changeName()` so that it takes a string as a parameter and set the account name to the provided string.
 
-## Tracking Grades
+## Grades
 
 A teacher wants a program to keep track of grades for students and decides to create a `Student` class for use in the program:
 
@@ -65,7 +78,7 @@ A teacher wants a program to keep track of grades for students and decides to cr
 
 Complete the class definition in `Student.java` appropriately. 
 
-## Creating a Band Booster Class
+## Band Boosters
 
 In this exercise, you will write a class that models a band booster and their candy sales. The `BandBooster` class should be implemented according to the following instructions:
 
@@ -83,7 +96,7 @@ In this exercise, you will write a class that models a band booster and their ca
        Joe:	16 boxes
        ```
 
-## Representing Names
+## Names
 
 Implement a `Name` class with the following methods:
 
@@ -115,12 +128,11 @@ Implement a `Rectangle` class with the following methods:
 
 At some point in your life, I'm sure you've played the game Hangman. To refresh your memory, the objective of Hangman is to guess an unknown word by choosing certain letters that you believe may be in the word. In our version of the game, the computer generates a random word while the human user is tasked with guessing the words. Here is the general procedure:
 
-1. The computer chooses a random word.
-2. The computer tells the user how many letters the word has.
-3. The computer prints out the valid letters (lowercase a-z minus the previously-guessed letters) and prompts the user to guess a letter.
+1. The computer chooses a random word and tells the user how many letters the word has.
+2. The computer prints out the valid letters (lowercase a-z minus the previously-guessed letters) and prompts the user to guess a letter.
    1. If the word contains the letter, the computer prints out a congratulatory message containing the letters of the word guessed so far with underscores in the positions of the missing letters.
    2. Otherwise, a different message is printed and the number of guesses is decremented by 1.
-4. Repeat the previous step until either the word is guessed or the number of guesses is 0.
+3. Repeat the previous step until either the word is guessed or the number of guesses is 0.
 
 
 
@@ -169,19 +181,19 @@ All of the code for this exercise is in `Hangman.java`. Your task it two-fold: F
 
 This exercise explores a strange and curious family of geometric objects: fractals. Benoit Mandelbrot coined this term to describe rough, fragmented geometric shapes that exhibited the curious property of self-similarity. No matter how far you zoom in on a fractal, it's structure remains the same. 
 
-For example, the Koch Snowflake is a popular fractal from way before Mandelbrot's time. This fractal is generated by a simple procedure:
+Fractals are easiest understood through examples. The Koch Snowflake is a popular fractal first described in 1904. This fractal is generated by a simple geometric procedure:
 
 1. Begin with an equilateral triangle
 2. Split each side of the equilateral triangle into three equal parts
 3. Construct an equilateral triangle for each side using the middle part as the base
-4. Remove the base of each new equilateral triangle
+4. Remove the base of each new equilateral triangle (green in the picture below)
 5. Repeat steps 2-5 for each side of our new figure (forever)
 
 A few iterations of this procedure are visualized below:
 
-![Koch Snowflake generation animation](https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif)
+![Koch Snowflake generation stages](https://upload.wikimedia.org/wikipedia/commons/d/d9/KochFlake.svg)
 
-Now, image zooming in on the boundary of the fractal. After a certain level, you would be unable to tell how far you've zoomed in; this is what mathematicians mean by self-similarity. 
+Now, imagine zooming in on the boundary of the fractal. After a certain level, you would be unable to tell how far you've zoomed in; this is what mathematicians mean by self-similarity. 
 
 ### The Mandelbrot Set
 
@@ -189,7 +201,7 @@ Now that we've seen a basic fractal, we're ready to move on to something a littl
 
 ![Mandelbrot Set](https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg)
 
-In addition to the geometric constructions (like the one above), fractals can be created in other ways. In particular, the Mandelbrot set is generated using a special sequence of complex numbers. I know, complex numbers probably weren't your favorite part of Algebra II, but bear with me. In the following equations, $z_i$ and $c$ are complex numbers (numbers of the form $a+bi$ where $i^2=-1$). Our sequence is defined using the recurrence $z_n=z_{n-1}^2+c$ where $z_0=0$ . To compute the sequence, all you need to do is take the last $z_i$, square it, and add $c$—simple enough. This sequence describes which complex numbers fit in the Mandelbrot Set; for a given complex number $c$, it is in the set if the numbers of the sequence $z_0, z_1, z_2, ...$ eventually go to zero (we'll call this convergence; the opposite of convergence is divergence). 
+In addition to the geometric constructions (like the one for the Koch Snowflake), fractals can be created in other ways. In particular, the Mandelbrot set is generated using a special sequence of complex numbers. I know, complex numbers probably weren't your favorite part of Algebra II, but bear with me. In the following equations, $z_i$ and $c$ are complex numbers (numbers of the form $a+bi$ where $i^2=-1$). Our sequence is defined using the recurrence $z_n=z_{n-1}^2+c$ where $z_0=0$ . To compute the sequence, all you need to do is take the last $z_i$, square it, and add $c$—simple enough. This sequence describes which complex numbers fit in the Mandelbrot Set; for a given complex number $c$, it is in the set if the numbers of the sequence $z_0, z_1, z_2, ...$ eventually go to zero (we'll call this convergence; the opposite of convergence is divergence). 
 
 ### Computing the Mandelbrot Set
 

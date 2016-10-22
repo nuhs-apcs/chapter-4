@@ -47,6 +47,8 @@ public class TestLab {
 		String[] lineParts = lastLine.split(" ");
 		int userLongestRun = Integer.parseInt(lineParts[lineParts.length - 1]);
 		assertEquals("The maximum run should be " + longestRun + " not " + userLongestRun, longestRun, userLongestRun);
+	
+		scan.close();
 	}
 	
 	@Test
