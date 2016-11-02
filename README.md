@@ -2,6 +2,28 @@
 
 Exercises 1-5 are adapted from similar lab assignments found at https://github.com/orhs-apcs/chapter-4 
 
+## Getting Started
+
+Here are a few steps to help you get started with these labs in Eclipse.
+
+1. Download the files by clicking on the green "Clone or download" button and select "Download ZIP" from the dropdown.
+
+   ![Downloading the files](github_download.png)
+
+2. Use the File Explorer to navigate to the downloaded file (likely in the Downloads folder), right-click on it, and select "Extract All..." In the new window, press the "Extract" button.
+
+3. If you have not already, open up Eclipse and select your workspace like usual.
+
+4. Under the File menu, select the "Import..." option. In the Import window, select the "Existing Projects into Workspace" from under the General tab and click Next.
+
+5. In the next window, click "Browse..." and select the extracted folder from step 2.
+
+6. Now, mark the checkbox next to the Chapter 4 **and** the checkbox next to "Copy projects into workspace" in the Options section.
+
+   ![Import projects window](eclipse_import.png)
+
+7. Click Finish and you're done!
+
 ## Table of Contents
 
 0. Running Unit Tests
@@ -92,9 +114,9 @@ In this exercise, you will write a class that models a band booster and their ca
 
 5.  The method `toString()` should return a string containing the name of the band booster and the number of boxes he/she has sold per this format:
 
-       ```
-       Joe:	16 boxes
-       ```
+        ​```
+        Joe:	16 boxes
+        ​```
 
 ## Names
 
