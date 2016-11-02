@@ -114,9 +114,7 @@ In this exercise, you will write a class that models a band booster and their ca
 
 5.  The method `toString()` should return a string containing the name of the band booster and the number of boxes he/she has sold per this format:
 
-        ​```
         Joe:	16 boxes
-        ​```
 
 ## Names
 
