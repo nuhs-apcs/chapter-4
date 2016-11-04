@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -93,9 +94,9 @@ public class TestLab {
 		
 		int numStudents = grades.length / 2;
 		
-		System.setIn(new ByteArrayInputStream(String.join("\n", gradeInputs).getBytes()));
-		
 		for (int i = 0; i < numStudents; i++) {
+			System.setIn(new ByteArrayInputStream((gradeInputs[2 * i] + "\n" + gradeInputs[2 * i + 1] + "\n").getBytes()));
+			
 			String studentName = "Student" + i;
 			Student nextStudent = new Student(studentName);
 			

@@ -8,7 +8,7 @@ Here are a few steps to help you get started with these labs in Eclipse.
 
 1. Download the files by clicking on the green "Clone or download" button and select "Download ZIP" from the dropdown.
 
-   ![Downloading the files](github_download.png)
+   ![Downloading the files](images/github_download.png)
 
 2. Use the File Explorer to navigate to the downloaded file (likely in the Downloads folder), right-click on it, and select "Extract All..." In the new window, press the "Extract" button.
 
@@ -20,13 +20,24 @@ Here are a few steps to help you get started with these labs in Eclipse.
 
 6. Now, mark the checkbox next to the Chapter 4 **and** the checkbox next to "Copy projects into workspace" in the Options section.
 
-   ![Import projects window](eclipse_import.png)
+   ![Import projects window](images/eclipse_import.png)
 
 7. Click Finish and you're done!
 
-## Table of Contents
+## Running Unit Tests
 
-0. Running Unit Tests
+In this chapter, exercises 1-6 have unit tests that will automatically test your code for you. All of the unit tests for this set of labs are contained in `TestLab.java`. To run the tests, open and run this file just like any other program with a `main()` method. Once you do so, a window should open showing all of the tests:
+
+<img src="images/junit_pane.png" style="width: 50%;"/>
+
+When you first run the tests, you'll get a window similar to that above. Notice that there are x's next to each lab; this means that the corresponding unit test failed. Down at the bottom in the Failure Trace window, you can see specifics about why the selected test (in this case, testAccount) has failed. Now, after completing the first lab and running the tests again, we get a slightly different picture:
+
+<img src="images/junit_pane_success.png" alt="JUnit Pane Success" style="width: 50%" />
+
+Now, as indicated by the green check, the testFlips test has passed. This means that the **Coin Flips** lab has been completed.
+
+## Labs
+
 1. Coin Flips
 2. Bank Account
 3. Grades
@@ -35,18 +46,6 @@ Here are a few steps to help you get started with these labs in Eclipse.
 6. Rectangles
 7. Hangman
 8. Fractals
-
-## Running Unit Tests
-
-In this chapter, exercises 1-6 have unit tests that will automatically test your code for you. All of the unit tests for this set of labs are contained in `TestLab.java`. To run the tests, open and run this file just like any other program with a `main()` method. Once you do so, a window should open showing all of the tests:
-
-<img src="junit_pane.png" style="width: 50%;"/>
-
-When you first run the tests, you'll get a window similar to that above. Notice that there are x's next to each lab; this means that the corresponding unit test failed. Down at the bottom in the Failure Trace window, you can see specifics about why the selected test (in this case, testAccount) has failed. Now, after completing the first lab and running the tests again, we get a slightly different picture:
-
-<img src="junit_pane_success.png" alt="JUnit Pane Success" style="width: 50%" />
-
-Now, as indicated by the green check, the testFlips test has passed. This means that the **Coin Flips** lab has been completed.
 
 ## Coin Flips
 
@@ -114,7 +113,7 @@ In this exercise, you will write a class that models a band booster and their ca
 
 5.  The method `toString()` should return a string containing the name of the band booster and the number of boxes he/she has sold per this format:
 
-        Joe:	16 boxes
+          Joe:	16 boxes
 
 ## Names
 
@@ -231,7 +230,7 @@ In practice, there's no way that we can compute all of the numbers in the sequen
 
 The code to make the pretty pictures work is already done for you; all you have to do is the math part. To open the GUI, run the `FractalFrame.java` program in Eclipse. To exit, you can either click the red 'X' in to close the window or press the red square in Eclipse (ignore any messages in the console). Right now, the window should be completely red. Your job is to make it look like this:
 
-![Mandelbrot Set program image save](mandelbrot.png)
+![Mandelbrot Set program image save](images/mandelbrot.png)
 
 To do this, open up `MandelbrotTest.java` and fill in the `testPoint()` method. The `real` and `imag` arguments represent the real and imaginary parts, respectively, of the $c$ from before (the number to test). The `maxIterations` argument tells you how many iterations to compute before deciding convergence (see the **Computing the Mandelbrot Set** section). The controls for the GUI are pretty straightforward; left-clicking zooms in 2x, right-clicking zooms out 2x, and dragging the mouse selects a region to zoom in on. Additional controls are available in the menu. A helpful one if you mess up the zoom is `View > Reset`. Good luck!
 
