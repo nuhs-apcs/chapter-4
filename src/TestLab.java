@@ -147,11 +147,11 @@ public class TestLab {
 		assertEquals("lastFirstMiddle() should be in the proper format", "Brott, Ryan Campbell", me.lastFirstMiddle());
 		
 		Name alterEgo = new Name("RYaN", "CAMpbeLl", "bRoTt");
-		assertEquals("Names should be considered equivalent if each part matches case insensitively", me, alterEgo);
+		assertTrue("Names should be considered equivalent if each part matches case insensitively", me.equals(alterEgo));
 		
 		assertEquals("The proper initials should be computed", "RCB", alterEgo.initials());
 		
-		assertEquals("The length should be properly computed", 13, me.length());
+		assertEquals("The length should be properly computed", 17, me.length());
 	}
 	
 	@Test
@@ -172,7 +172,6 @@ public class TestLab {
 		
 		assertTrue("Equals (same instance)", rect.equals(rect));
 		assertTrue("Equals (new instance)", rect.equals(new Rectangle(width, height)));
-		assertTrue("Equals (different dimensions)", rect.equals(new Rectangle(height, width)));
 		assertFalse("Equals (not equal)", rect.equals(rect2));
 		
 		assertEquals("Diagonal length", diagonal, rect.diagonal(), TOLERANCE);

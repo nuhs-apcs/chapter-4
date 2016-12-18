@@ -1,5 +1,6 @@
+package mandelbrot;
 
-public class MandelbrotTest {
+public class MandelbrotTester {
 	
 	/**
 	 * Tests the given point in the complex plane to see

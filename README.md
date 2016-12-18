@@ -113,7 +113,7 @@ In this exercise, you will write a class that models a band booster and their ca
 
 5.  The method `toString()` should return a string containing the name of the band booster and the number of boxes he/she has sold per this format:
 
-          Joe:	16 boxes
+           Joe:	16 boxes
 
 ## Names
 
@@ -139,7 +139,7 @@ Implement a `Rectangle` class with the following methods:
 - `public double area()`—returns the area of the rectangle
 - `public double perimeter()`—returns the perimeter of the rectangle
 - `public String toString()`—returns a string representation of the rectangle containing the width and height, e.g. `"90x102"` (width first, then height)
-- `public double equals(Rectangle other)`—two rectangles are equal if their dimensions are equals (within a tolerance of 0.00001 for the `double` comparisons; also note that the rectangle with dimensions 400x13 is the same as one with dimensions 13x400
+- `public boolean equals(Rectangle other)`—two rectangles are equal if their dimensions are equal (within a tolerance of 0.00001 for the `double` comparisons)
 - `public double diagonal()`—returns the length of the diagonal of the rectangle
 - `public boolean isSquare()`—returns `true` if the rectangle is square (again, within a tolerance of 0.00001)
 

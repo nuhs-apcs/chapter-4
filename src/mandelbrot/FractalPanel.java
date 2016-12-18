@@ -1,3 +1,4 @@
+package mandelbrot;
 import java.awt.event.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Double;
@@ -99,7 +100,7 @@ public class FractalPanel extends JPanel implements MouseListener, MouseMotionLi
 		double vSpacing = viewRect.height / height;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
-				set[i][j] = MandelbrotTest.testPoint(
+				set[i][j] = MandelbrotTester.testPoint(
 						x + (i + 0.5) * hSpacing, 
 						y + (j + 0.5) * vSpacing, 
 						MAX_ITERATIONS);
