@@ -50,11 +50,12 @@ The maximum run of HEADS was 6
 
 The file `Account.java` contains a partial definition for a class representing a bank account. Complete the `Account` class as described below.
 
-1. Complete the `withdraw()` method so that it subtracts the withdrawal amount from the balance if there are sufficient funds and prints a warning message otherwise. For extra practice, you may also write appropriate preconditions above the method.
-2. Complete the `deposit()` method so that is adds the deposit amount to the balance if the amount is positive and prints a warning message otherwise. For extra practice, you may also write appropriate preconditions above the method.
-3. Complete the `toString()` method body; this should return a string containing the name, account number, and the balance for the account. **Note:** the `toString()	` should not call `System.out.println()` and instead just return the appropriate string representation.
-4. Fill in the code for `chargeFee()` so that it deducts a service fee from the account.
-5. Fill in the code for `changeName()` so that it takes a string as a parameter and set the account name to the provided string.
+1. Create instance variables for the parameters listed in the constructor and assign them correspondingly inside.
+2. Complete the `withdraw()` method so that it subtracts the withdrawal amount from the balance if there are sufficient funds and prints a warning message otherwise. For extra practice, you may also write appropriate preconditions above the method.
+3. Complete the `deposit()` method so that is adds the deposit amount to the balance if the amount is positive and prints a warning message otherwise. For extra practice, you may also write appropriate preconditions above the method.
+4. Complete the `toString()` method body; this should return a string containing the name, account number, and the balance for the account. **Note:** the `toString()	` should not call `System.out.println()` and instead just return the appropriate string representation.
+5. Fill in the code for `chargeFee()` so that it deducts a service fee from the account.
+6. Fill in the code for `changeName()` so that it takes a string as a parameter and set the account name to the provided string.
 
 ## Grades
 
