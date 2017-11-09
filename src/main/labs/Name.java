@@ -1,3 +1,4 @@
+package labs;
 
 public class Name {
 	

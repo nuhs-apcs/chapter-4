@@ -1,55 +1,28 @@
 # Chapter 4 Lab Manual
 
-Exercises 1-5 are adapted from similar lab assignments found at https://github.com/orhs-apcs/chapter-4 
+Some exercises are adapted from similar lab assignments found at https://github.com/orhs-apcs/chapter-4 
 
 ## Getting Started
 
-Here are a few steps to help you get started with these labs in Eclipse.
-
-1. Download the files by clicking on the green "Clone or download" button and select "Download ZIP" from the dropdown.
-
-   ![Downloading the files](images/github_download.png)
-
-2. Use the File Explorer to navigate to the downloaded file (likely in the Downloads folder), right-click on it, and select "Extract All..." In the new window, press the "Extract" button.
-
-3. If you have not already, open up Eclipse and select your workspace like usual.
-
-4. Under the File menu, select the "Import..." option. In the Import window, select the "Existing Projects into Workspace" from under the General tab and click Next.
-
-5. In the next window, click "Browse..." and select the extracted folder from step 2.
-
-6. Now, mark the checkbox next to the Chapter 4 **and** the checkbox next to "Copy projects into workspace" in the Options section.
-
-   ![Import projects window](images/eclipse_import.png)
-
-7. Click Finish and you're done!
+See instructions from [Chapter 1](https://github.com/nuhs-apcs/chapter-1).
 
 ## Running Unit Tests
 
-In this chapter, exercises 1-6 have unit tests that will automatically test your code for you. All of the unit tests for this set of labs are contained in `TestLab.java`. To run the tests, open and run this file just like any other program with a `main()` method. Once you do so, a window should open showing all of the tests:
-
-<img src="images/junit_pane.png" style="width: 50%;"/>
-
-When you first run the tests, you'll get a window similar to that above. Notice that there are x's next to each lab; this means that the corresponding unit test failed. Down at the bottom in the Failure Trace window, you can see specifics about why the selected test (in this case, testAccount) has failed. Now, after completing the first lab and running the tests again, we get a slightly different picture:
-
-<img src="images/junit_pane_success.png" alt="JUnit Pane Success" style="width: 50%" />
-
-Now, as indicated by the green check, the testFlips test has passed. This means that the **Coin Flips** lab has been completed.
+In this chapter, exercises 1-5 have unit tests that will automatically test your code for you. To run the tests, right click on the `src/test` folder and select `JUnit Test` under `Run As`. Once you do so, a window should open showing all of the tests and their results.
 
 ## Labs
 
 1. Coin Flips
 2. Bank Account
 3. Grades
-4. Band Boosters
-5. Names
-6. Rectangles
-7. Hangman
-8. Fractals
+4. Names
+5. Rectangles
+6. Hangman
+7. Fractals
 
 ## Coin Flips
 
-In the lab project, there is a `Coin` class that implements the basic behavior of a coin. Your task is to write a program in the `CoinTest` class that finds the length of the longest run of consecutive heads in 100 flips of a coin. You will need to use a `Coin` object to emulate the coin flips. A skeleton of the program is provided in the `CoinTest.java` file that explains the details of your program implementation. 
+In the lab project, there is a `Coin` class that implements the basic behavior of a coin. Your task is to write a program in the `CoinDriver` class that finds the length of the longest run of consecutive heads in 100 flips of a coin. You will need to use a `Coin` object to emulate the coin flips. A skeleton of the program is provided in the `CoinDriver.java` file that explains the details of your program implementation. 
 
 Here is a sample run of the program:
 
@@ -98,22 +71,6 @@ A teacher wants a program to keep track of grades for students and decides to cr
    ```
 
 Complete the class definition in `Student.java` appropriately. 
-
-## Band Boosters
-
-In this exercise, you will write a class that models a band booster and their candy sales. The `BandBooster` class should be implemented according to the following instructions:
-
-1.  The `BandBooster` class should contain two pieces of instance data: `name` and `boxesSold`.
-
-2.  There should be a constructor that takes the band booster's name as the only argument. The initial count of `boxesSold` should be 0.
-
-3.  The method `getName()` should return the name of the band booster.
-
-4.  The method `updateSales()` should take a single integer parameter representing the number of additional boxes sold. This should be added to the total number of boxes sold. **Note:** negative inputs to this method should be ignored and not affect the number of boxes sold.
-
-5.  The method `toString()` should return a string containing the name of the band booster and the number of boxes he/she has sold per this format:
-
-           Joe:	16 boxes
 
 ## Names
 
@@ -194,7 +151,7 @@ You guessed the word: shape
 
 All of the code for this exercise is in `Hangman.java`. Your task it two-fold: First, fill in the code in `playHangman()` according to the comments inside. Second, there are a few logical errors (bugs) in the program that need to be debugged. Once you fix them all, the program should run properly. You may find it helpful to walk through the code using Eclipse's debugger for the second portion of this exercise. 
 
-## Fractals
+## Optional: Fractals
 
 ### Introduction
 

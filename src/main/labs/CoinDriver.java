@@ -1,6 +1,7 @@
+package labs;
 
 
-public class CoinTest
+public class CoinDriver
 {
     public static void main (String[] args)
     {

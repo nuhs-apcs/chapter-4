@@ -1,4 +1,4 @@
-package mandelbrot;
+package labs.mandelbrot;
 import java.awt.event.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Double;
@@ -100,7 +100,7 @@ public class FractalPanel extends JPanel implements MouseListener, MouseMotionLi
 		double vSpacing = viewRect.height / height;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
-				set[i][j] = MandelbrotTester.testPoint(
+				set[i][j] = testPoint(
 						x + (i + 0.5) * hSpacing, 
 						y + (j + 0.5) * vSpacing, 
 						MAX_ITERATIONS);
@@ -198,6 +198,22 @@ public class FractalPanel extends JPanel implements MouseListener, MouseMotionLi
 	}
 
 	@Override
-	public void mouseMoved(MouseEvent e) { }
+	public void mouseMoved(MouseEvent e) {
+		
+	}
+	
+	/**
+	 * Tests the given point in the complex plane to see
+	 * if it is part of the Mandelbrot Set.
+	 * @param real real part of the complex point
+	 * @param imag imaginary part of the complex point
+	 * @param maxIterations maximum iterations
+	 * @return number of iterations taken to diverge;
+	 * 		   -1 if convergent
+	 */
+	public static int testPoint(double real, double imag, int maxIterations) {
+		// YOUR CODE HERE
+		return 0;
+	}
 	
 }
